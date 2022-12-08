@@ -6,7 +6,7 @@
 /*   By: wkonings <wkonings@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/14 09:12:24 by wkonings      #+#    #+#                 */
-/*   Updated: 2022/12/08 17:56:55 by wkonings      ########   odam.nl         */
+/*   Updated: 2022/12/08 20:26:07 by wkonings      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,7 @@ void			better_sleep(unsigned long duration);
 unsigned long	get_time(void);
 void			*ft_calloc(size_t count, size_t size);
 long			ft_atol(const char *nb);
-
+void			*one_phil(void *param);
 // init.c
 bool			init_deepthought(int ac, char **av, t_deep *thoughts);
 bool			init_time(t_deep *thoughts);

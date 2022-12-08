@@ -6,7 +6,7 @@
 /*   By: wkonings <wkonings@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/14 06:53:35 by wkonings      #+#    #+#                 */
-/*   Updated: 2022/12/08 17:53:58 by wkonings      ########   odam.nl         */
+/*   Updated: 2022/12/08 20:27:44 by wkonings      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,4 +92,17 @@ long	ft_atol(const char *nb)
 		i++;
 	}
 	return ((long)(r * sign));
+}
+
+void	*one_phil(void *param)
+{
+	t_deep	*thoughts;
+	t_phil	*philo;
+
+	thoughts = param;
+	philo = &thoughts->philos[0];
+	add_queue(get_time() - thoughts->epoch, THINK, philo->id, thoughts);
+	pthread_mutex_lock(philo->right);
+	add_queue(get_time() - thoughts->epoch, FORK, philo->id, thoughts);
+	return (NULL);
 }

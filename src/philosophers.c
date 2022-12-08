@@ -6,7 +6,7 @@
 /*   By: wkonings <wkonings@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/14 09:12:20 by wkonings      #+#    #+#                 */
-/*   Updated: 2022/12/08 18:35:21 by wkonings      ########   odam.nl         */
+/*   Updated: 2022/12/08 20:28:39 by wkonings      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,9 +89,9 @@ int	main(int ac, char **av)
 
 	thoughts = ft_calloc(1, sizeof(t_deep));
 	if (!thoughts)
-		return (init_error("FAILED LMAO\n"));
+		return (init_error("FAILED\n"));
 	if (init_philosophers(ac, av, thoughts) != 0)
-		return (init_error("Failed to init_philosophers"));
+		return (EXIT_FAILURE);
 	if (create_threads(thoughts) != 0)
 		return (EXIT_FAILURE);
 	thoughts->epoch = get_time();

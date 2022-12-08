@@ -6,11 +6,13 @@
 /*   By: wkonings <wkonings@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/12/08 16:43:37 by wkonings      #+#    #+#                 */
-/*   Updated: 2022/12/08 17:55:09 by wkonings      ########   odam.nl         */
+/*   Updated: 2022/12/08 20:11:00 by wkonings      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/philosophers.h"
+
+
 
 const char	*random_food(t_log *log)
 {

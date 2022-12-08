@@ -6,7 +6,7 @@
 /*   By: wkonings <wkonings@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/12/08 16:03:37 by wkonings      #+#    #+#                 */
-/*   Updated: 2022/12/08 17:51:31 by wkonings      ########   odam.nl         */
+/*   Updated: 2022/12/08 20:29:07 by wkonings      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@
 # else
 #  define FORMAT_MSG "%8li %i %s\n"
 #  define FORMAT_EAT "%8li %i %s %s\n"
-#  define FORK_MSG "has taken fork"
-#  define FORK2_MSG "has taken fork"
+#  define FORK_MSG "has taken a fork"
+#  define FORK2_MSG "has taken a fork"
 #  define EATING_MSG "is eating"
 #  define SLEEPING_MSG "is sleeping"
 #  define THINKING_MSG "is thinking"
@@ -66,6 +66,9 @@ typedef struct s_log
 	const char	*foods[69];
 	int			food_index;
 }	t_log;
+
+# define USAGE "Usage ./philo <NB_PHILOS> <TT_DIE> \
+<TT_EAT> <TT_SLEEP> optional: <NB_MEALS>"
 
 # define FOOD_TYPES 40
 # ifdef FOOD

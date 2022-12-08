@@ -6,7 +6,7 @@
 /*   By: wkonings <wkonings@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/12/08 14:50:47 by wkonings      #+#    #+#                 */
-/*   Updated: 2022/12/08 17:48:12 by wkonings      ########   odam.nl         */
+/*   Updated: 2022/12/08 20:29:12 by wkonings      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,7 @@ bool	legal_input(int ac, char **av)
 
 	i = 0;
 	if (ac < 5)
-		return (init_error("Usage ./philo <NB_PHILOS> <TT_DIE> \
-<TT_EAT> <TT_SLEEP> optional: <NB_MEALS>"));
+		return (init_error(USAGE));
 	if (ac > 6)
 		return (init_error("Too many arguments."));
 	while (av[++i])
@@ -53,6 +52,16 @@ bool	create_threads(t_deep *thoughts)
 
 	i = -1;
 	philo = thoughts->philos;
+	if (thoughts->variables[NB_PHILOS] == 1)
+	{
+		if (pthread_create(&philo[0].thread, \
+			NULL, one_phil, (void *)thoughts) != 0)
+			return (init_error("Failed to allocate ONE THREAD."));
+		if (pthread_create(&thoughts->shakespeare,
+				NULL, &shakespeare, thoughts) != 0)
+			return (init_error("Failed to create shakespeare."));
+		return (0);
+	}
 	while (++i < thoughts->variables[NB_PHILOS])
 		if (pthread_create(&philo[i].thread, NULL,
 				life, (void *)&philo[i]) != 0)
