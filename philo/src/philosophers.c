@@ -6,7 +6,7 @@
 /*   By: wkonings <wkonings@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/14 09:12:20 by wkonings      #+#    #+#                 */
-/*   Updated: 2022/12/08 20:28:39 by wkonings      ########   odam.nl         */
+/*   Updated: 2022/12/12 18:45:49 by wkonings      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,7 @@ int	main(int ac, char **av)
 		return (EXIT_FAILURE);
 	if (create_threads(thoughts) != 0)
 		return (EXIT_FAILURE);
+	usleep (1000);
 	thoughts->epoch = get_time();
 	pthread_mutex_unlock(&thoughts->sync);
 	watch_threads(thoughts);

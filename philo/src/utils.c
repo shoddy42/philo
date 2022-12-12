@@ -6,7 +6,7 @@
 /*   By: wkonings <wkonings@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/14 06:53:35 by wkonings      #+#    #+#                 */
-/*   Updated: 2022/12/08 20:27:44 by wkonings      ########   odam.nl         */
+/*   Updated: 2022/12/12 18:44:22 by wkonings      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	better_sleep(unsigned long duration)
 				usleep(200);
 			return ;
 		}
-		usleep((delta * 2) / 3);
+		usleep((delta * 4) / 5);
 	}
 }
 
