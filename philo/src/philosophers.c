@@ -6,7 +6,7 @@
 /*   By: wkonings <wkonings@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/14 09:12:20 by wkonings      #+#    #+#                 */
-/*   Updated: 2022/12/12 18:45:49 by wkonings      ########   odam.nl         */
+/*   Updated: 2022/12/12 18:51:35 by wkonings      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@ bool	confirm_reality(t_deep *thoughts)
 	return (existance);
 }
 
+/**
+ * @brief The eating function for philosophers.
+ * 
+ * @param philo The philosopher's personal struct.
+ */
 static void	consume(t_phil *philo)
 {
 	t_deep			*thoughts;
@@ -54,6 +59,13 @@ static void	prep_life(t_deep *thoughts, t_phil *philo)
 		usleep(200);
 }
 
+/**
+ * @brief	The main thread function of the philosophers.
+ * 			Will cycle between eating sleeping and thinking.
+ * 
+ * @param param The philosopher struct as a void pointer.
+ * @returns NULL
+ */
 void	*life(void *param)
 {
 	t_phil	*philo;

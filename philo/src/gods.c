@@ -6,7 +6,7 @@
 /*   By: wkonings <wkonings@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/12/02 04:54:39 by wkonings      #+#    #+#                 */
-/*   Updated: 2022/12/08 17:54:41 by wkonings      ########   odam.nl         */
+/*   Updated: 2022/12/12 18:54:52 by wkonings      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,14 @@ void	end_universe(t_deep *thoughts)
 	pthread_mutex_unlock(&thoughts->sync);
 }
 
+/**
+ * @brief The function that actually checks if a philosopher has died.
+ * 
+ * @param mortal The philosopher's struct
+ * @param thoughts The main struct
+ * @return [true] when someone has died.
+ * @return [false] when noone died.
+ */
 static bool	thanatos(t_phil *mortal, t_deep *thoughts)
 {
 	unsigned long	time;
@@ -35,6 +43,14 @@ static bool	thanatos(t_phil *mortal, t_deep *thoughts)
 	return (true);
 }
 
+/**
+ * @brief	The function that checks whether
+ * 			all philosophers are done eating or dead.
+ * 
+ * @param thoughts The main struct
+ * @returns [true] while the simulation should continue.
+ * @returns [false] when the simulation ends.
+ */
 static bool	observe(t_deep *thoughts)
 {
 	t_phil	*mortal;
